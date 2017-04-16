@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.11.76
-Release  : 1
+Release  : 2
 URL      : https://pypi.python.org/packages/66/21/44b38c0373e0d1765addce0c3e49f0a3f9abcf0be2929111dafc7a4dc19b/awscli-1.11.76.tar.gz
 Source0  : https://pypi.python.org/packages/66/21/44b38c0373e0d1765addce0c3e49f0a3f9abcf0be2929111dafc7a4dc19b/awscli-1.11.76.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -14,17 +14,22 @@ Requires: awscli-bin
 Requires: awscli-python
 Requires: PyYAML
 Requires: argparse
+Requires: botocore
 Requires: colorama
 Requires: docutils
 Requires: nose
 Requires: python-mock
 Requires: rsa
+Requires: s3transfer
 Requires: tox
 Requires: wheel
+BuildRequires : boto3
+BuildRequires : botocore
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-dev
 BuildRequires : python3-dev
+BuildRequires : s3transfer
 BuildRequires : setuptools
 
 %description
@@ -56,12 +61,12 @@ python components for the awscli package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1492364416
+export SOURCE_DATE_EPOCH=1492368827
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1492364416
+export SOURCE_DATE_EPOCH=1492368827
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
