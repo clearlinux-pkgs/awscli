@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.11.82
-Release  : 8
+Release  : 9
 URL      : https://pypi.debian.net/awscli/awscli-1.11.82.tar.gz
 Source0  : https://pypi.debian.net/awscli/awscli-1.11.82.tar.gz
 Summary  : Universal Command Line Environment for AWS.
