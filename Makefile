@@ -1,5 +1,5 @@
 PKG_NAME := awscli
-URL := https://pypi.debian.net/awscli/awscli-1.11.163.tar.gz
+URL := https://pypi.debian.net/awscli/awscli-1.11.165.tar.gz
 
 
 include ../common/Makefile.common
