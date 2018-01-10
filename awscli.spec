@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.14.22
-Release  : 118
+Release  : 119
 URL      : https://pypi.python.org/packages/9f/bd/2985213611b0c693e7b9927a9337c3d0d6e6b476014f5e991398a2cc0d4d/awscli-1.14.22.tar.gz
 Source0  : https://pypi.python.org/packages/9f/bd/2985213611b0c693e7b9927a9337c3d0d6e6b476014f5e991398a2cc0d4d/awscli-1.14.22.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -65,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1515593308
+export SOURCE_DATE_EPOCH=1515595749
 python3 setup.py build -b py3
 
 %install
