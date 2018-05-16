@@ -1,1 +1,1 @@
-Please always update botocore and awscli in lockstep
+Always update botocore, boto3, and awscli in lockstep.

@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.15.21
-Release  : 170
+Release  : 171
 URL      : https://github.com/aws/aws-cli/archive/1.15.21.tar.gz
 Source0  : https://github.com/aws/aws-cli/archive/1.15.21.tar.gz
 Summary  : No detailed summary available
@@ -14,15 +14,16 @@ Requires: awscli-bin
 Requires: awscli-python3
 Requires: awscli-python
 Requires: PyYAML
+Requires: botocore
 Requires: colorama
 Requires: docutils
+Requires: jmespath
 Requires: nose
 Requires: python-mock
 Requires: rsa
+Requires: s3transfer
 Requires: tox
 Requires: wheel
-BuildRequires : boto3
-BuildRequires : botocore
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pluggy
@@ -30,7 +31,6 @@ BuildRequires : py-python
 BuildRequires : pytest
 BuildRequires : python-dev
 BuildRequires : python3-dev
-BuildRequires : s3transfer
 BuildRequires : setuptools
 BuildRequires : tox
 BuildRequires : virtualenv
@@ -77,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1526429457
+export SOURCE_DATE_EPOCH=1526450779
 python3 setup.py build -b py3
 
 %install
