@@ -4,12 +4,12 @@
 #
 Name     : awscli
 Version  : 1.15.21
-Release  : 169
+Release  : 170
 URL      : https://github.com/aws/aws-cli/archive/1.15.21.tar.gz
 Source0  : https://github.com/aws/aws-cli/archive/1.15.21.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : Apache-2.0
+License  : Apache-2.0 MIT
 Requires: awscli-bin
 Requires: awscli-python3
 Requires: awscli-python
@@ -77,7 +77,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1526429284
+export SOURCE_DATE_EPOCH=1526429457
 python3 setup.py build -b py3
 
 %install
