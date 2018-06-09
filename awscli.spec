@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.15.35
-Release  : 183
+Release  : 184
 URL      : https://github.com/aws/aws-cli/archive/1.15.35.tar.gz
 Source0  : https://github.com/aws/aws-cli/archive/1.15.35.tar.gz
 Summary  : No detailed summary available
@@ -19,10 +19,8 @@ Requires: colorama
 Requires: docutils
 Requires: jmespath
 Requires: nose
-Requires: python-mock
 Requires: rsa
 Requires: s3transfer
-Requires: tox
 Requires: wheel
 BuildRequires : pbr
 BuildRequires : pip
@@ -77,7 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1528555565
+export SOURCE_DATE_EPOCH=1528562050
 python3 setup.py build -b py3
 
 %install
