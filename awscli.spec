@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.15.39
-Release  : 189
+Release  : 190
 URL      : https://github.com/aws/aws-cli/archive/1.15.39.tar.gz
 Source0  : https://github.com/aws/aws-cli/archive/1.15.39.tar.gz
 Summary  : No detailed summary available
