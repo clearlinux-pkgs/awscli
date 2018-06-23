@@ -1,5 +1,5 @@
 PKG_NAME := awscli
-URL = https://github.com/aws/aws-cli/archive/1.15.40.tar.gz
+URL = https://github.com/aws/aws-cli/archive/1.15.45.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
