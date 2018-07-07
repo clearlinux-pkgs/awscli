@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.15.53
-Release  : 201
+Release  : 202
 URL      : https://github.com/aws/aws-cli/archive/1.15.53.tar.gz
 Source0  : https://github.com/aws/aws-cli/archive/1.15.53.tar.gz
 Summary  : No detailed summary available
@@ -84,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1530930379
+export SOURCE_DATE_EPOCH=1530993097
 find -name "*pyx" | xargs touch ||:
 python3 setup.py build -b py3
 
