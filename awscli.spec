@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.16.31
-Release  : 269
+Release  : 270
 URL      : https://files.pythonhosted.org/packages/99/dc/3e08e9c7cc2e0e1f0f88de05220fd372a1b3b94826e92b1511ea6077a333/awscli-1.16.31.tar.gz
 Source0  : https://files.pythonhosted.org/packages/99/dc/3e08e9c7cc2e0e1f0f88de05220fd372a1b3b94826e92b1511ea6077a333/awscli-1.16.31.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -73,7 +73,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1539266082
+export SOURCE_DATE_EPOCH=1539268640
 python3 setup.py build
 
 %install
