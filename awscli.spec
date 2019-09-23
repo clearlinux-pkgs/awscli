@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.16.243
-Release  : 473
+Release  : 474
 URL      : https://files.pythonhosted.org/packages/7d/4a/a5f0e50fe586bc93c6d89671ce06e5cd831c22628cc9c51c093c18703387/awscli-1.16.243.tar.gz
 Source0  : https://files.pythonhosted.org/packages/7d/4a/a5f0e50fe586bc93c6d89671ce06e5cd831c22628cc9c51c093c18703387/awscli-1.16.243.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -37,12 +37,8 @@ BuildRequires : s3transfer
 BuildRequires : wheel
 
 %description
-=======
 aws-cli
-=======
-.. image:: https://travis-ci.org/aws/aws-cli.svg?branch=develop
-:target: https://travis-ci.org/aws/aws-cli
-:alt: Build Status
+        =======
 
 %package bin
 Summary: bin components for the awscli package.
@@ -87,8 +83,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569259730
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1569263614
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
