@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.16.253
-Release  : 484
+Release  : 485
 URL      : https://files.pythonhosted.org/packages/21/fe/1e6db2397b0326835b53539cb6b45fb66e3f8032c9443c8873552b3ed093/awscli-1.16.253.tar.gz
 Source0  : https://files.pythonhosted.org/packages/21/fe/1e6db2397b0326835b53539cb6b45fb66e3f8032c9443c8873552b3ed093/awscli-1.16.253.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -15,7 +15,6 @@ Requires: awscli-license = %{version}-%{release}
 Requires: awscli-python = %{version}-%{release}
 Requires: awscli-python3 = %{version}-%{release}
 Requires: PyYAML
-Requires: argparse
 Requires: botocore
 Requires: colorama
 Requires: docutils
@@ -25,7 +24,6 @@ Requires: rsa
 Requires: s3transfer
 Requires: wheel
 BuildRequires : PyYAML
-BuildRequires : argparse
 BuildRequires : botocore
 BuildRequires : buildreq-distutils3
 BuildRequires : colorama
@@ -37,12 +35,8 @@ BuildRequires : s3transfer
 BuildRequires : wheel
 
 %description
-=======
 aws-cli
-=======
-.. image:: https://travis-ci.org/aws/aws-cli.svg?branch=develop
-:target: https://travis-ci.org/aws/aws-cli
-:alt: Build Status
+        =======
 
 %package bin
 Summary: bin components for the awscli package.
@@ -87,8 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570378558
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1570481067
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
