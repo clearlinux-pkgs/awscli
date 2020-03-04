@@ -9,12 +9,3 @@
  ]
  
  
---- awscli-1.17.3/awscli.egg-info/requires.txt~	2020-01-15 19:14:01.000000000 +0000
-+++ awscli-1.17.3/awscli.egg-info/requires.txt	2020-01-16 17:18:42.993389852 +0000
-@@ -2,5 +2,5 @@
- docutils<0.16,>=0.10
- rsa<=3.5.0,>=3.1.2
- s3transfer<0.4.0,>=0.3.0
--PyYAML<5.3,>=3.10
-+PyYAML>=3.10
- colorama<0.4.4,>=0.2.5
