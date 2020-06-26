@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.18.88
-Release  : 646
+Release  : 647
 URL      : https://files.pythonhosted.org/packages/88/7f/7104c396101242e5758c7df5e6337273914cf61ffef077c0f45ee3d28f20/awscli-1.18.88.tar.gz
 Source0  : https://files.pythonhosted.org/packages/88/7f/7104c396101242e5758c7df5e6337273914cf61ffef077c0f45ee3d28f20/awscli-1.18.88.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -67,6 +67,13 @@ python components for the awscli package.
 Summary: python3 components for the awscli package.
 Group: Default
 Requires: python3-core
+Provides: pypi(awscli)
+Requires: pypi(botocore)
+Requires: pypi(colorama)
+Requires: pypi(docutils)
+Requires: pypi(pyyaml)
+Requires: pypi(rsa)
+Requires: pypi(s3transfer)
 
 %description python3
 python3 components for the awscli package.
@@ -81,7 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1593186724
+export SOURCE_DATE_EPOCH=1593192934
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
