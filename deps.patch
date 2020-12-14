@@ -1,11 +1,30 @@
---- awscli-1.17.3/setup.py~	2020-01-15 19:14:00.000000000 +0000
-+++ awscli-1.17.3/setup.py	2020-01-16 17:18:16.889390215 +0000
-@@ -28,7 +28,7 @@
-     'docutils>=0.10,<0.16',
-     'rsa>=3.1.2,<=3.5.0',
-     's3transfer>=0.3.0,<0.4.0',
--    'PyYAML>=3.10,<5.3',
-+    'PyYAML>=3.10',
- ]
+PR to bump the colorama constraint:
+https://github.com/aws/aws-cli/pull/5712
+
+
+diff --git a/setup.cfg b/setup.cfg
+index ea601ff..b4e8a67 100644
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -9,7 +9,7 @@ requires-dist =
+ 	PyYAML>=3.10,<5.3; python_version=='3.4'
+ 	PyYAML>=3.10,<5.4; python_version!='3.4'
+ 	colorama>=0.2.5,<0.4.2; python_version=='3.4'
+-	colorama>=0.2.5,<0.4.4; python_version!='3.4'
++	colorama>=0.2.5; python_version!='3.4'
+ 	rsa>=3.1.2,<=4.0.0; python_version=='3.4'
+ 	rsa>=3.1.2,<=4.5.0; python_version!='3.4'
+ 
+diff --git a/setup.py b/setup.py
+index 470cdd8..80220f8 100644
+--- a/setup.py
++++ b/setup.py
+@@ -36,7 +36,7 @@ if sys.version_info[:2] == (3, 4):
+     install_requires.append('rsa>=3.1.2,<=4.0.0')
+ else:
+     install_requires.append('PyYAML>=3.10,<5.4')
+-    install_requires.append('colorama>=0.2.5,<0.4.4')
++    install_requires.append('colorama>=0.2.5')
+     install_requires.append('rsa>=3.1.2,<=4.5.0')
  
  
