@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.18.195
-Release  : 749
+Release  : 750
 URL      : https://files.pythonhosted.org/packages/83/a2/dd9c4ca4b9d2cf511a3de0bfd14a557901fbcfc292dd5cb9e3bc5de6f6ef/awscli-1.18.195.tar.gz
 Source0  : https://files.pythonhosted.org/packages/83/a2/dd9c4ca4b9d2cf511a3de0bfd14a557901fbcfc292dd5cb9e3bc5de6f6ef/awscli-1.18.195.tar.gz
 Summary  : Universal Command Line Environment for AWS.
