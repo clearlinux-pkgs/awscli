@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.19.0
-Release  : 773
+Release  : 774
 URL      : https://files.pythonhosted.org/packages/e5/07/949a1ae62c9cab27f414168df394f0fb7f9f3bd0017160ceb6e6269ac15a/awscli-1.19.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e5/07/949a1ae62c9cab27f414168df394f0fb7f9f3bd0017160ceb6e6269ac15a/awscli-1.19.0.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -33,6 +33,7 @@ BuildRequires : nose
 BuildRequires : rsa
 BuildRequires : s3transfer
 BuildRequires : wheel
+Patch1: deps.patch
 
 %description
 This package provides a unified command line interface to Amazon Web Services.
@@ -82,13 +83,14 @@ python3 components for the awscli package.
 %prep
 %setup -q -n awscli-1.19.0
 cd %{_builddir}/awscli-1.19.0
+%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1612373316
+export SOURCE_DATE_EPOCH=1612374499
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
