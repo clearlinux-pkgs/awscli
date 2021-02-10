@@ -1,5 +1,7 @@
 PR to bump the colorama constraint:
 https://github.com/aws/aws-cli/pull/5712
+PR to bump the PyYAML constraint:
+https://github.com/aws/aws-cli/pull/5887
 
 
 --- awscli-1.19.0/setup.cfg~	2021-02-02 19:11:38.000000000 +0000
@@ -7,8 +9,9 @@ https://github.com/aws/aws-cli/pull/5712
 @@ -7,7 +7,7 @@
  	docutils>=0.10,<0.16
  	s3transfer>=0.3.0,<0.4.0
- 	PyYAML>=3.10,<5.4
+-	PyYAML>=3.10,<5.4
 -	colorama>=0.2.5,<0.4.4
++	PyYAML>=3.10,<5.5
 +	colorama>=0.2.5
  	rsa>=3.1.2,<=4.5.0
  
@@ -18,8 +21,9 @@ https://github.com/aws/aws-cli/pull/5712
 @@ -28,7 +28,7 @@
      'docutils>=0.10,<0.16',
      's3transfer>=0.3.0,<0.4.0',
-     'PyYAML>=3.10,<5.4',
+-    'PyYAML>=3.10,<5.4',
 -    'colorama>=0.2.5,<0.4.4',
++    'PyYAML>=3.10,<5.5',
 +    'colorama>=0.2.5',
      'rsa>=3.1.2,<=4.5.0',
  ]
