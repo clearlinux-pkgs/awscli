@@ -1,22 +1,18 @@
-PR to bump the colorama constraint:
-https://github.com/aws/aws-cli/pull/5712
-
-
 diff --git a/setup.cfg b/setup.cfg
-index af5503c..a131934 100644
+index d52ce49..0784242 100644
 --- a/setup.cfg
 +++ b/setup.cfg
-@@ -7,7 +7,7 @@ requires-dist =
+@@ -7,7 +7,7 @@ requires_dist =
  	docutils>=0.10,<0.16
  	s3transfer>=0.3.0,<0.4.0
  	PyYAML>=3.10,<5.5
 -	colorama>=0.2.5,<0.4.4
 +	colorama>=0.2.5
  	rsa>=3.1.2,<=4.5.0; python_version=='2.7'
- 	rsa>=3.1.2,<4.8; python_version>='3.6'
+ 	rsa>=3.1.2,<4.8; python_version>'2.7'
  
 diff --git a/setup.py b/setup.py
-index ab8a7f9..eea22de 100644
+index f52d298..26aa989 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -28,7 +28,7 @@ install_requires = [
@@ -25,6 +21,6 @@ index ab8a7f9..eea22de 100644
      'PyYAML>=3.10,<5.5',
 -    'colorama>=0.2.5,<0.4.4',
 +    'colorama>=0.2.5',
+     'rsa>=3.1.2,<=4.5.0; python_version=="2.7"',
+     'rsa>=3.1.2,<4.8; python_version>"2.7"',
  ]
- 
- if sys.version_info[:2] == (2, 7):
