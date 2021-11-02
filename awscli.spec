@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.21.8
-Release  : 960
+Release  : 961
 URL      : https://files.pythonhosted.org/packages/af/f1/2f3a9d67db99efa0be83d5aa0b37e7edfdb3a1113bfcfd557effec93d794/awscli-1.21.8.tar.gz
 Source0  : https://files.pythonhosted.org/packages/af/f1/2f3a9d67db99efa0be83d5aa0b37e7edfdb3a1113bfcfd557effec93d794/awscli-1.21.8.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -86,7 +86,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1635807757
+export SOURCE_DATE_EPOCH=1635877958
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -96,6 +96,8 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
+pypi-dep-fix.py . docutils
+pypi-dep-fix.py . PyYAML
 python3 setup.py build
 
 %install
@@ -104,6 +106,8 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/awscli
 cp %{_builddir}/awscli-1.21.8/LICENSE.txt %{buildroot}/usr/share/package-licenses/awscli/4be62be059d3caeb4224228692644230d266368b
 python3 -tt setup.py build  install --root=%{buildroot}
+pypi-dep-fix.py %{buildroot} docutils
+pypi-dep-fix.py %{buildroot} PyYAML
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
