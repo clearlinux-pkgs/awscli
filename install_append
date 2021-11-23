@@ -1,2 +1,0 @@
-mkdir -p %{buildroot}/usr/bin
-cp bin/* %{buildroot}/usr/bin/
