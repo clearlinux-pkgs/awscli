@@ -4,13 +4,12 @@
 #
 Name     : awscli
 Version  : 1.22.10
-Release  : 976
+Release  : 977
 URL      : https://files.pythonhosted.org/packages/32/2d/a4e09a2964dabcc51232c8d90bc363491f9ff81f4947409030a05f87ad06/awscli-1.22.10.tar.gz
 Source0  : https://files.pythonhosted.org/packages/32/2d/a4e09a2964dabcc51232c8d90bc363491f9ff81f4947409030a05f87ad06/awscli-1.22.10.tar.gz
 Summary  : Universal Command Line Environment for AWS.
 Group    : Development/Tools
 License  : Apache-2.0
-Requires: awscli-bin = %{version}-%{release}
 Requires: awscli-license = %{version}-%{release}
 Requires: awscli-python = %{version}-%{release}
 Requires: awscli-python3 = %{version}-%{release}
@@ -28,15 +27,6 @@ Patch1: deps.patch
 
 %description
 This package provides a unified command line interface to Amazon Web Services.
-
-%package bin
-Summary: bin components for the awscli package.
-Group: Binaries
-Requires: awscli-license = %{version}-%{release}
-
-%description bin
-bin components for the awscli package.
-
 
 %package license
 Summary: license components for the awscli package.
@@ -81,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1637355410
+export SOURCE_DATE_EPOCH=1637682269
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -93,14 +83,14 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 pypi-dep-fix.py . docutils
 pypi-dep-fix.py . PyYAML
-python3 setup.py build
+python3 -m build --wheel --skip-dependency-check --no-isolation
 
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/awscli
 cp %{_builddir}/awscli-1.22.10/LICENSE.txt %{buildroot}/usr/share/package-licenses/awscli/4be62be059d3caeb4224228692644230d266368b
-python3 -tt setup.py build  install --root=%{buildroot}
+python3 -m install --destdir=%{buildroot} dist/*.whl
 pypi-dep-fix.py %{buildroot} docutils
 pypi-dep-fix.py %{buildroot} PyYAML
 echo ----[ mark ]----
@@ -109,14 +99,6 @@ echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
-
-%files bin
-%defattr(-,root,root,-)
-/usr/bin/aws
-/usr/bin/aws.cmd
-/usr/bin/aws_bash_completer
-/usr/bin/aws_completer
-/usr/bin/aws_zsh_completer.sh
 
 %files license
 %defattr(0644,root,root,0755)

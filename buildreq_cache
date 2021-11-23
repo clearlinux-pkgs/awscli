@@ -1,0 +1,7 @@
+1.22.10
+pypi(botocore)
+pypi(colorama)
+pypi(docutils)
+pypi(pyyaml)
+pypi(rsa)
+pypi(s3transfer)
