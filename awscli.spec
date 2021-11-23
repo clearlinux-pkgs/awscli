@@ -4,12 +4,13 @@
 #
 Name     : awscli
 Version  : 1.22.10
-Release  : 977
+Release  : 978
 URL      : https://files.pythonhosted.org/packages/32/2d/a4e09a2964dabcc51232c8d90bc363491f9ff81f4947409030a05f87ad06/awscli-1.22.10.tar.gz
 Source0  : https://files.pythonhosted.org/packages/32/2d/a4e09a2964dabcc51232c8d90bc363491f9ff81f4947409030a05f87ad06/awscli-1.22.10.tar.gz
 Summary  : Universal Command Line Environment for AWS.
 Group    : Development/Tools
 License  : Apache-2.0
+Requires: awscli-bin = %{version}-%{release}
 Requires: awscli-license = %{version}-%{release}
 Requires: awscli-python = %{version}-%{release}
 Requires: awscli-python3 = %{version}-%{release}
@@ -27,6 +28,15 @@ Patch1: deps.patch
 
 %description
 This package provides a unified command line interface to Amazon Web Services.
+
+%package bin
+Summary: bin components for the awscli package.
+Group: Binaries
+Requires: awscli-license = %{version}-%{release}
+
+%description bin
+bin components for the awscli package.
+
 
 %package license
 Summary: license components for the awscli package.
@@ -71,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1637682269
+export SOURCE_DATE_EPOCH=1637682868
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -96,9 +106,21 @@ pypi-dep-fix.py %{buildroot} PyYAML
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
+## install_append content
+mkdir -p %{buildroot}/usr/bin
+cp bin/* %{buildroot}/usr/bin/
+## install_append end
 
 %files
 %defattr(-,root,root,-)
+
+%files bin
+%defattr(-,root,root,-)
+/usr/bin/aws
+/usr/bin/aws.cmd
+/usr/bin/aws_bash_completer
+/usr/bin/aws_completer
+/usr/bin/aws_zsh_completer.sh
 
 %files license
 %defattr(0644,root,root,0755)
