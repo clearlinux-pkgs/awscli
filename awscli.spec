@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.22.12
-Release  : 981
+Release  : 982
 URL      : https://files.pythonhosted.org/packages/de/5d/2d066356aa1a8c794f5a951016de22e44dd0fe6f7630b5e8bdd15a2d75ee/awscli-1.22.12.tar.gz
 Source0  : https://files.pythonhosted.org/packages/de/5d/2d066356aa1a8c794f5a951016de22e44dd0fe6f7630b5e8bdd15a2d75ee/awscli-1.22.12.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -81,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1637700995
+export SOURCE_DATE_EPOCH=1637778226
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -93,6 +93,7 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 export MAKEFLAGS=%{?_smp_mflags}
 pypi-dep-fix.py . docutils
 pypi-dep-fix.py . PyYAML
+pypi-dep-fix.py . rsa
 python3 -m build --wheel --skip-dependency-check --no-isolation
 
 %install
@@ -103,6 +104,7 @@ cp %{_builddir}/awscli-1.22.12/LICENSE.txt %{buildroot}/usr/share/package-licens
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 pypi-dep-fix.py %{buildroot} docutils
 pypi-dep-fix.py %{buildroot} PyYAML
+pypi-dep-fix.py %{buildroot} rsa
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
