@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.22.24
-Release  : 994
+Release  : 995
 URL      : https://files.pythonhosted.org/packages/b2/c6/1eb7de546f06a5c01a7bdfec406f6c56dc4c8744bb3a96a095062fba29de/awscli-1.22.24.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b2/c6/1eb7de546f06a5c01a7bdfec406f6c56dc4c8744bb3a96a095062fba29de/awscli-1.22.24.tar.gz
 Summary  : Universal Command Line Environment for AWS.
