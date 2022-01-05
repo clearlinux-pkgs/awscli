@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.22.29
-Release  : 1000
+Release  : 1001
 URL      : https://files.pythonhosted.org/packages/48/ee/1ac0696896604fb4e5a7c20abdc9d8c20d3764e46166d09941c5d59a1f0f/awscli-1.22.29.tar.gz
 Source0  : https://files.pythonhosted.org/packages/48/ee/1ac0696896604fb4e5a7c20abdc9d8c20d3764e46166d09941c5d59a1f0f/awscli-1.22.29.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -81,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641416324
+export SOURCE_DATE_EPOCH=1641422476
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
