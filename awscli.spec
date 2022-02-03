@@ -4,7 +4,7 @@
 #
 Name     : awscli
 Version  : 1.22.47
-Release  : 1019
+Release  : 1020
 URL      : https://files.pythonhosted.org/packages/54/f8/552517735136a390a3b1ab7a7e0dadc40e0131eeaa3e8d292b614ff9c02a/awscli-1.22.47.tar.gz
 Source0  : https://files.pythonhosted.org/packages/54/f8/552517735136a390a3b1ab7a7e0dadc40e0131eeaa3e8d292b614ff9c02a/awscli-1.22.47.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -14,9 +14,9 @@ Requires: awscli-bin = %{version}-%{release}
 Requires: awscli-license = %{version}-%{release}
 Requires: awscli-python = %{version}-%{release}
 Requires: awscli-python3 = %{version}-%{release}
-Requires: botocore
-Requires: jmespath
-Requires: s3transfer
+Requires: pypi(botocore)
+Requires: pypi(jmespath)
+Requires: pypi(s3transfer)
 BuildRequires : buildreq-distutils3
 BuildRequires : pypi(botocore)
 BuildRequires : pypi(colorama)
@@ -81,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1643835977
+export SOURCE_DATE_EPOCH=1643909960
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
