@@ -4,15 +4,13 @@
 #
 Name     : awscli
 Version  : 1.25.58
-Release  : 1162
+Release  : 1163
 URL      : https://files.pythonhosted.org/packages/7e/6e/f6bf9fc01901bd0de4e9f572ff42474b5addc1ab2d433db796ce652dc5c4/awscli-1.25.58.tar.gz
 Source0  : https://files.pythonhosted.org/packages/7e/6e/f6bf9fc01901bd0de4e9f572ff42474b5addc1ab2d433db796ce652dc5c4/awscli-1.25.58.tar.gz
 Summary  : Universal Command Line Environment for AWS.
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: awscli-bin = %{version}-%{release}
-Requires: awscli-filemap = %{version}-%{release}
-Requires: awscli-lib = %{version}-%{release}
 Requires: awscli-license = %{version}-%{release}
 Requires: awscli-python = %{version}-%{release}
 Requires: awscli-python3 = %{version}-%{release}
@@ -35,28 +33,9 @@ This package provides a unified command line interface to Amazon Web Services.
 Summary: bin components for the awscli package.
 Group: Binaries
 Requires: awscli-license = %{version}-%{release}
-Requires: awscli-filemap = %{version}-%{release}
 
 %description bin
 bin components for the awscli package.
-
-
-%package filemap
-Summary: filemap components for the awscli package.
-Group: Default
-
-%description filemap
-filemap components for the awscli package.
-
-
-%package lib
-Summary: lib components for the awscli package.
-Group: Libraries
-Requires: awscli-license = %{version}-%{release}
-Requires: awscli-filemap = %{version}-%{release}
-
-%description lib
-lib components for the awscli package.
 
 
 %package license
@@ -79,7 +58,6 @@ python components for the awscli package.
 %package python3
 Summary: python3 components for the awscli package.
 Group: Default
-Requires: awscli-filemap = %{version}-%{release}
 Requires: python3-core
 Provides: pypi(awscli)
 Requires: pypi(botocore)
@@ -106,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1661197522
+export SOURCE_DATE_EPOCH=1661270310
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -165,15 +143,6 @@ popd
 /usr/bin/aws_bash_completer
 /usr/bin/aws_completer
 /usr/bin/aws_zsh_completer.sh
-/usr/share/clear/optimized-elf/bin*
-
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-awscli
-
-%files lib
-%defattr(-,root,root,-)
-/usr/share/clear/optimized-elf/other*
 
 %files license
 %defattr(0644,root,root,0755)
