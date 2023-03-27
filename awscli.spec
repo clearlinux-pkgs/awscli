@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : awscli
-Version  : 1.27.98
-Release  : 1310
-URL      : https://files.pythonhosted.org/packages/cd/44/0e862f27f960fc19b98a16dceddc87038d2a1aeca7efa4e56d84efddd6be/awscli-1.27.98.tar.gz
-Source0  : https://files.pythonhosted.org/packages/cd/44/0e862f27f960fc19b98a16dceddc87038d2a1aeca7efa4e56d84efddd6be/awscli-1.27.98.tar.gz
+Version  : 1.27.99
+Release  : 1312
+URL      : https://files.pythonhosted.org/packages/50/2e/3c9e46d6bc366e4ff3efbd78d9c4fcf9f7333ba880a9846daeece06712cc/awscli-1.27.99.tar.gz
+Source0  : https://files.pythonhosted.org/packages/50/2e/3c9e46d6bc366e4ff3efbd78d9c4fcf9f7333ba880a9846daeece06712cc/awscli-1.27.99.tar.gz
 Summary  : Universal Command Line Environment for AWS.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -19,12 +19,6 @@ Requires: pypi(botocore)
 Requires: pypi(jmespath)
 Requires: pypi(s3transfer)
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(botocore)
-BuildRequires : pypi(colorama)
-BuildRequires : pypi(docutils)
-BuildRequires : pypi(pyyaml)
-BuildRequires : pypi(rsa)
-BuildRequires : pypi(s3transfer)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -76,11 +70,11 @@ python3 components for the awscli package.
 
 
 %prep
-%setup -q -n awscli-1.27.98
-cd %{_builddir}/awscli-1.27.98
+%setup -q -n awscli-1.27.99
+cd %{_builddir}/awscli-1.27.99
 %patch1 -p1
 pushd ..
-cp -a awscli-1.27.98 buildavx2
+cp -a awscli-1.27.99 buildavx2
 popd
 
 %build
@@ -88,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679668012
+export SOURCE_DATE_EPOCH=1679930650
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
