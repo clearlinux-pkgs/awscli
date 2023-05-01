@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : awscli
-Version  : 1.27.123
-Release  : 1335
-URL      : https://files.pythonhosted.org/packages/89/7d/3122e4b74d8083336778d0efc309bfd8ddcb01d6db79b0fa7a0106ac7c48/awscli-1.27.123.tar.gz
-Source0  : https://files.pythonhosted.org/packages/89/7d/3122e4b74d8083336778d0efc309bfd8ddcb01d6db79b0fa7a0106ac7c48/awscli-1.27.123.tar.gz
+Version  : 1.27.124
+Release  : 1336
+URL      : https://files.pythonhosted.org/packages/72/39/7bdf18501ac0e066cf072ae216109e2382c614903cb1340543ffecdad8cf/awscli-1.27.124.tar.gz
+Source0  : https://files.pythonhosted.org/packages/72/39/7bdf18501ac0e066cf072ae216109e2382c614903cb1340543ffecdad8cf/awscli-1.27.124.tar.gz
 Summary  : Universal Command Line Environment for AWS.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -70,11 +70,11 @@ python3 components for the awscli package.
 
 
 %prep
-%setup -q -n awscli-1.27.123
-cd %{_builddir}/awscli-1.27.123
+%setup -q -n awscli-1.27.124
+cd %{_builddir}/awscli-1.27.124
 %patch1 -p1
 pushd ..
-cp -a awscli-1.27.123 buildavx2
+cp -a awscli-1.27.124 buildavx2
 popd
 
 %build
@@ -82,15 +82,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682957394
+export SOURCE_DATE_EPOCH=1682981208
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 pypi-dep-fix.py . docutils
 pypi-dep-fix.py . PyYAML
