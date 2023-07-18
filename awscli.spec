@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : awscli
-Version  : 1.29.3
-Release  : 1383
-URL      : https://files.pythonhosted.org/packages/5c/ca/bb5c19427e47710799e320713c354d9d8547f8676543981d6edc001f03e9/awscli-1.29.3.tar.gz
-Source0  : https://files.pythonhosted.org/packages/5c/ca/bb5c19427e47710799e320713c354d9d8547f8676543981d6edc001f03e9/awscli-1.29.3.tar.gz
+Version  : 1.29.4
+Release  : 1384
+URL      : https://files.pythonhosted.org/packages/ab/38/848bd65b64c9f185927b0074611684106b30492b4772b190ef0f8bb018b5/awscli-1.29.4.tar.gz
+Source0  : https://files.pythonhosted.org/packages/ab/38/848bd65b64c9f185927b0074611684106b30492b4772b190ef0f8bb018b5/awscli-1.29.4.tar.gz
 Summary  : Universal Command Line Environment for AWS.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -22,7 +22,6 @@ BuildRequires : buildreq-distutils3
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
-Patch1: deps.patch
 
 %description
 This package provides a unified command line interface to Amazon Web Services.
@@ -70,11 +69,10 @@ python3 components for the awscli package.
 
 
 %prep
-%setup -q -n awscli-1.29.3
-cd %{_builddir}/awscli-1.29.3
-%patch -P 1 -p1
+%setup -q -n awscli-1.29.4
+cd %{_builddir}/awscli-1.29.4
 pushd ..
-cp -a awscli-1.29.3 buildavx2
+cp -a awscli-1.29.4 buildavx2
 popd
 
 %build
@@ -82,7 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689288030
+export SOURCE_DATE_EPOCH=1689689467
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
