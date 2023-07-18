@@ -5,7 +5,7 @@
 #
 Name     : awscli
 Version  : 1.29.4
-Release  : 1384
+Release  : 1385
 URL      : https://files.pythonhosted.org/packages/ab/38/848bd65b64c9f185927b0074611684106b30492b4772b190ef0f8bb018b5/awscli-1.29.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ab/38/848bd65b64c9f185927b0074611684106b30492b4772b190ef0f8bb018b5/awscli-1.29.4.tar.gz
 Summary  : Universal Command Line Environment for AWS.
@@ -80,7 +80,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689689467
+export SOURCE_DATE_EPOCH=1689691511
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -93,6 +93,7 @@ export MAKEFLAGS=%{?_smp_mflags}
 pypi-dep-fix.py . docutils
 pypi-dep-fix.py . PyYAML
 pypi-dep-fix.py . rsa
+pypi-dep-fix.py . colorama
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
 export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
@@ -103,6 +104,7 @@ export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
 pypi-dep-fix.py . docutils
 pypi-dep-fix.py . PyYAML
 pypi-dep-fix.py . rsa
+pypi-dep-fix.py . colorama
 python3 -m build --wheel --skip-dependency-check --no-isolation
 
 popd
@@ -116,6 +118,7 @@ pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 pypi-dep-fix.py %{buildroot} docutils
 pypi-dep-fix.py %{buildroot} PyYAML
 pypi-dep-fix.py %{buildroot} rsa
+pypi-dep-fix.py %{buildroot} colorama
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
