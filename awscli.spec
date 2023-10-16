@@ -5,7 +5,7 @@
 #
 Name     : awscli
 Version  : 1.29.63
-Release  : 1444
+Release  : 1445
 URL      : https://files.pythonhosted.org/packages/3d/00/1ac423016e256ba056a5304bdac0e8958f95c66676e60f4559fbb486d171/awscli-1.29.63.tar.gz
 Source0  : https://files.pythonhosted.org/packages/3d/00/1ac423016e256ba056a5304bdac0e8958f95c66676e60f4559fbb486d171/awscli-1.29.63.tar.gz
 Summary  : Universal Command Line Environment for AWS.
