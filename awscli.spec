@@ -6,10 +6,10 @@
 # autospec commit: e661f3a
 #
 Name     : awscli
-Version  : 1.30.0
-Release  : 1468
-URL      : https://files.pythonhosted.org/packages/4f/a0/51a7b7179db3f3dea5a8cae50e6de9e17b052745e5ed14ad515ffcd8ab0d/awscli-1.30.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/4f/a0/51a7b7179db3f3dea5a8cae50e6de9e17b052745e5ed14ad515ffcd8ab0d/awscli-1.30.0.tar.gz
+Version  : 1.30.1
+Release  : 1469
+URL      : https://files.pythonhosted.org/packages/71/38/30fbb21806e0b9e295f6dc0aa86e06aac38a4e1f0533d972280369b09d5b/awscli-1.30.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/71/38/30fbb21806e0b9e295f6dc0aa86e06aac38a4e1f0533d972280369b09d5b/awscli-1.30.1.tar.gz
 Summary  : Universal Command Line Environment for AWS.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -71,10 +71,10 @@ python3 components for the awscli package.
 
 
 %prep
-%setup -q -n awscli-1.30.0
-cd %{_builddir}/awscli-1.30.0
+%setup -q -n awscli-1.30.1
+cd %{_builddir}/awscli-1.30.1
 pushd ..
-cp -a awscli-1.30.0 buildavx2
+cp -a awscli-1.30.1 buildavx2
 popd
 
 %build
@@ -82,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1700004897
+export SOURCE_DATE_EPOCH=1700093273
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
