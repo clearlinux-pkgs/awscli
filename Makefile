@@ -1,5 +1,5 @@
 PKG_NAME := awscli
-URL = https://files.pythonhosted.org/packages/68/d0/0e44a7f07554b8954297e5b84da1074d2b199fc08c9f4b09ab85cc85b179/awscli-1.34.7.tar.gz
+URL = https://files.pythonhosted.org/packages/2a/40/ce0ea7e31a114a4fef9206ae28525cbadb8c2ea6879454b39853100802c2/awscli-1.34.8.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
