@@ -7,7 +7,7 @@
 #
 Name     : awscli
 Version  : 1.35.15
-Release  : 1702
+Release  : 1703
 URL      : https://files.pythonhosted.org/packages/85/ec/6392178a81bd26424a0e36603a01140812ae79fc32731c00c6db26e41c87/awscli-1.35.15.tar.gz
 Source0  : https://files.pythonhosted.org/packages/85/ec/6392178a81bd26424a0e36603a01140812ae79fc32731c00c6db26e41c87/awscli-1.35.15.tar.gz
 Summary  : Universal Command Line Environment for AWS.
