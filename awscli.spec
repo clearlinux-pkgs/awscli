@@ -13,6 +13,10 @@ Source0  : https://files.pythonhosted.org/packages/b1/15/a0e5b361d16912ee28d28dc
 Summary  : Universal Command Line Environment for AWS.
 Group    : Development/Tools
 License  : Apache-2.0
+Requires: awscli-bin = %{version}-%{release}
+Requires: awscli-license = %{version}-%{release}
+Requires: awscli-python = %{version}-%{release}
+Requires: awscli-python3 = %{version}-%{release}
 Requires: pypi(botocore)
 Requires: pypi(jmespath)
 Requires: pypi(s3transfer)
@@ -23,6 +27,48 @@ BuildRequires : buildreq-distutils3
 
 %description
 This package provides a unified command line interface to Amazon Web Services.
+
+%package bin
+Summary: bin components for the awscli package.
+Group: Binaries
+Requires: awscli-license = %{version}-%{release}
+
+%description bin
+bin components for the awscli package.
+
+
+%package license
+Summary: license components for the awscli package.
+Group: Default
+
+%description license
+license components for the awscli package.
+
+
+%package python
+Summary: python components for the awscli package.
+Group: Default
+Requires: awscli-python3 = %{version}-%{release}
+
+%description python
+python components for the awscli package.
+
+
+%package python3
+Summary: python3 components for the awscli package.
+Group: Default
+Requires: python3-core
+Provides: pypi(awscli)
+Requires: pypi(botocore)
+Requires: pypi(colorama)
+Requires: pypi(docutils)
+Requires: pypi(pyyaml)
+Requires: pypi(rsa)
+Requires: pypi(s3transfer)
+
+%description python3
+python3 components for the awscli package.
+
 
 %prep
 %setup -q -n awscli-1.36.33
@@ -36,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1735936751
+export SOURCE_DATE_EPOCH=1735936868
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -111,3 +157,22 @@ popd
 
 %files
 %defattr(-,root,root,-)
+
+%files bin
+%defattr(-,root,root,-)
+/usr/bin/aws
+/usr/bin/aws.cmd
+/usr/bin/aws_bash_completer
+/usr/bin/aws_completer
+/usr/bin/aws_zsh_completer.sh
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/awscli/4be62be059d3caeb4224228692644230d266368b
+
+%files python
+%defattr(-,root,root,-)
+
+%files python3
+%defattr(-,root,root,-)
+/usr/lib/python3*/*
